@@ -5,14 +5,14 @@
  * It's used by the Drizzle CLI for schema migrations and generating SQL.
  */
 
-import { defineConfig } from "drizzle-kit";
-import * as dotenv from "dotenv";
+import { defineConfig } from "drizzle-kit"
+import * as dotenv from "dotenv"
 
 // Load environment variables from .env.local
-dotenv.config({ path: ".env.local" });
+dotenv.config({ path: ".env" })
 
 if (!process.env.DATABASE_URL) {
-  throw new Error("DATABASE_URL is not set in .env.local");
+  throw new Error("DATABASE_URL is not set in .env.local")
 }
 
 export default defineConfig({
@@ -30,5 +30,4 @@ export default defineConfig({
   // Additional options
   verbose: true,
   strict: true,
-  
-});
+})
