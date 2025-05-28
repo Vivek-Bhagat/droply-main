@@ -44,17 +44,17 @@ export default function DashboardContent({
 
   return (
     <>
-      <div className="mb-8">
+      <div className="mb-8 font-mono">
         <h2 className="text-4xl font-bold text-default-900">
-          Hi,{" "}
-          <span className="text-primary">
+          Hi,{"  "}
+          <span className="text-primary font-mono">
             {userName?.length > 10
               ? `${userName?.substring(0, 10)}...`
               : userName?.split(" ")[0] || "there"}
           </span>
           !
         </h2>
-        <p className="text-default-600 mt-2 text-lg">
+        <p className="text-default-600 mt-2 text-lg font-sans">
           Your images are waiting for you.
         </p>
       </div>
@@ -76,7 +76,7 @@ export default function DashboardContent({
           title={
             <div className="flex items-center gap-3">
               <FileText className="h-5 w-5" />
-              <span className="font-medium">My Files</span>
+              <span className="font-medium font-mono">My Files</span>
             </div>
           }
         >

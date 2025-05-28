@@ -86,7 +86,7 @@ export default function SignInForm() {
           <div className="space-y-2">
             <label
               htmlFor="identifier"
-              className="text-sm font-medium text-default-900"
+              className="text-sm font-medium text-default-900 font-mono"
             >
               Email
             </label>
@@ -94,7 +94,7 @@ export default function SignInForm() {
               id="identifier"
               type="email"
               placeholder="your.email@example.com"
-              startContent={<Mail className="h-4 w-4 text-default-500" />}
+              startContent={<Mail className="h-4 w-4 text-default-500 font-mono" />}
               isInvalid={!!errors.identifier}
               errorMessage={errors.identifier?.message}
               {...register("identifier")}
@@ -103,10 +103,10 @@ export default function SignInForm() {
           </div>
 
           <div className="space-y-2">
-            <div className="flex justify-between items-center">
+            <div className="flex justify-between items-center font-mono">
               <label
                 htmlFor="password"
-                className="text-sm font-medium text-default-900"
+                className="text-sm font-medium text-default-900 font-mono"
               >
                 Password
               </label>

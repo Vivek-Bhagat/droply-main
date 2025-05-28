@@ -1,35 +1,55 @@
-import { Button } from "@heroui/button";
-import { SignedIn, SignedOut } from "@clerk/nextjs";
-import Link from "next/link";
-import { Card, CardBody } from "@heroui/card";
+import { Button } from "@heroui/button"
+import { SignedIn, SignedOut } from "@clerk/nextjs"
+import Link from "next/link"
+import { Card, CardBody } from "@heroui/card"
 import {
   CloudUpload,
   Shield,
   Folder,
   Image as ImageIcon,
   ArrowRight,
-} from "lucide-react";
-import Navbar from "@/components/Navbar";
+  Sparkles,
+  Lock,
+  Zap,
+} from "lucide-react"
+import Navbar from "@/components/Navbar"
+import dynamic from "next/dynamic"
+import Head from "next/head"
+
+// const ParticlesBg = dynamic(() => import("@/components/ParticlesBg"), {
+//   ssr: false,
+// })
+// const FuturisticGrid = dynamic(() => import("@/components/FuturisticGrid"), {
+//   ssr: false,
+// })
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col bg-default-50">
+    <div className="relative min-h-screen flex flex-col bg-default-50 overflow-hidden">
+      <Head>
+        <title>Droply - Store your images with ease</title>
+      </Head>
+
+      {/* Animated backgrounds */}
+      {/* <ParticlesBg />
+      <FuturisticGrid /> */}
+
       {/* Use the unified Navbar component */}
       <Navbar />
 
       {/* Main content */}
-      <main className="flex-1">
+      <main className="flex-1 relative z-10">
         {/* Hero section */}
         <section className="py-12 md:py-20 px-4 md:px-6">
           <div className="container mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
-              <div className="space-y-6 text-center lg:text-left">
+              <div className="space-y-6 text-center lg:text-left animate-fadeInUp">
                 <div>
-                  <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-default-900 leading-tight">
+                  <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-default-900 leading-tight font-sans">
                     Store your <span className="text-primary">images</span> with
                     ease
                   </h1>
-                  <p className="text-lg md:text-xl text-default-600">
+                  <p className="text-lg md:text-xl text-default-600 font-mono">
                     Simple. Secure. Fast.
                   </p>
                 </div>
@@ -37,12 +57,18 @@ export default function Home() {
                 <div className="flex flex-wrap gap-4 pt-4 justify-center lg:justify-start">
                   <SignedOut>
                     <Link href="/sign-up">
-                      <Button size="lg" variant="solid" color="primary">
+                      <Button
+                        size="lg"
+                        variant="solid"
+                        color="primary">
                         Get Started
                       </Button>
                     </Link>
                     <Link href="/sign-in">
-                      <Button size="lg" variant="flat" color="primary">
+                      <Button
+                        size="lg"
+                        variant="flat"
+                        color="primary">
                         Sign In
                       </Button>
                     </Link>
@@ -53,8 +79,7 @@ export default function Home() {
                         size="lg"
                         variant="solid"
                         color="primary"
-                        endContent={<ArrowRight className="h-4 w-4" />}
-                      >
+                        endContent={<ArrowRight className="h-4 w-4" />}>
                         Go to Dashboard
                       </Button>
                     </Link>
@@ -62,11 +87,11 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="flex justify-center order-first lg:order-last">
+              <div className="flex justify-center order-first lg:order-last animate-float">
                 <div className="relative w-64 h-64 md:w-80 md:h-80">
                   <div className="absolute inset-0 bg-primary/10 rounded-full blur-3xl"></div>
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <ImageIcon className="h-24 md:h-32 w-24 md:w-32 text-primary/70" />
+                    <ImageIcon className="h-24 md:h-32 w-24 md:w-32 text-primary/70 animate-pulse" />
                   </div>
                 </div>
               </div>
@@ -84,7 +109,7 @@ export default function Home() {
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
-              <Card className="border border-default-200 bg-default-50 shadow-sm hover:shadow-md transition-shadow">
+              <Card className="border border-default-200 bg-default-50 shadow-sm hover:shadow-md transition-shadow animate-zoomIn">
                 <CardBody className="p-6 text-center">
                   <CloudUpload className="h-10 md:h-12 w-10 md:w-12 mx-auto mb-4 text-primary" />
                   <h3 className="text-lg md:text-xl font-semibold mb-2 text-default-900">
@@ -94,7 +119,7 @@ export default function Home() {
                 </CardBody>
               </Card>
 
-              <Card className="border border-default-200 bg-default-50 shadow-sm hover:shadow-md transition-shadow">
+              <Card className="border border-default-200 bg-default-50 shadow-sm hover:shadow-md transition-shadow animate-zoomIn delay-100">
                 <CardBody className="p-6 text-center">
                   <Folder className="h-10 md:h-12 w-10 md:w-12 mx-auto mb-4 text-primary" />
                   <h3 className="text-lg md:text-xl font-semibold mb-2 text-default-900">
@@ -106,7 +131,7 @@ export default function Home() {
                 </CardBody>
               </Card>
 
-              <Card className="border border-default-200 bg-default-50 shadow-sm hover:shadow-md transition-shadow sm:col-span-2 md:col-span-1 mx-auto sm:mx-0 max-w-md sm:max-w-full">
+              <Card className="border border-default-200 bg-default-50 shadow-sm hover:shadow-md transition-shadow animate-zoomIn delay-200">
                 <CardBody className="p-6 text-center">
                   <Shield className="h-10 md:h-12 w-10 md:w-12 mx-auto mb-4 text-primary" />
                   <h3 className="text-lg md:text-xl font-semibold mb-2 text-default-900">
@@ -114,6 +139,42 @@ export default function Home() {
                   </h3>
                   <p className="text-default-600">
                     Your images, your eyes only.
+                  </p>
+                </CardBody>
+              </Card>
+
+              <Card className="border border-default-200 bg-default-50 shadow-sm hover:shadow-md transition-shadow animate-zoomIn delay-[300ms]">
+                <CardBody className="p-6 text-center">
+                  <Sparkles className="h-10 md:h-12 w-10 md:w-12 mx-auto mb-4 text-primary" />
+                  <h3 className="text-lg md:text-xl font-semibold mb-2 text-default-900">
+                    AI Enhancement
+                  </h3>
+                  <p className="text-default-600">
+                    Smarter images, sharper memories.
+                  </p>
+                </CardBody>
+              </Card>
+
+              <Card className="border border-default-200 bg-default-50 shadow-sm hover:shadow-md transition-shadow animate-zoomIn delay-[400ms]">
+                <CardBody className="p-6 text-center">
+                  <Lock className="h-10 md:h-12 w-10 md:w-12 mx-auto mb-4 text-primary" />
+                  <h3 className="text-lg md:text-xl font-semibold mb-2 text-default-900">
+                    End-to-End Encryption
+                  </h3>
+                  <p className="text-default-600">
+                    Only you and those you choose see your data.
+                  </p>
+                </CardBody>
+              </Card>
+
+              <Card className="border border-default-200 bg-default-50 shadow-sm hover:shadow-md transition-shadow animate-zoomIn delay-[500ms]">
+                <CardBody className="p-6 text-center">
+                  <Zap className="h-10 md:h-12 w-10 md:w-12 mx-auto mb-4 text-primary" />
+                  <h3 className="text-lg md:text-xl font-semibold mb-2 text-default-900">
+                    Lightning Fast
+                  </h3>
+                  <p className="text-default-600">
+                    No lag, no wait. Instant access.
                   </p>
                 </CardBody>
               </Card>
@@ -134,8 +195,7 @@ export default function Home() {
                     size="lg"
                     variant="solid"
                     color="primary"
-                    endContent={<ArrowRight className="h-4 w-4" />}
-                  >
+                    endContent={<ArrowRight className="h-4 w-4" />}>
                     Let's Go
                   </Button>
                 </Link>
@@ -147,8 +207,7 @@ export default function Home() {
                   size="lg"
                   variant="solid"
                   color="primary"
-                  endContent={<ArrowRight className="h-4 w-4" />}
-                >
+                  endContent={<ArrowRight className="h-4 w-4" />}>
                   Dashboard
                 </Button>
               </Link>
@@ -158,7 +217,7 @@ export default function Home() {
       </main>
 
       {/* Simple footer */}
-      <footer className="bg-default-50 border-t border-default-200 py-4 md:py-6">
+      <footer className="bg-default-50 border-t border-default-200 py-4 md:py-6 relative z-10">
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center gap-2 mb-4 md:mb-0">
@@ -172,5 +231,5 @@ export default function Home() {
         </div>
       </footer>
     </div>
-  );
+  )
 }
