@@ -188,7 +188,7 @@ export default function FileUploadForm({
   };
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 poppins-bold">
       {/* Action buttons */}
       <div className="flex gap-2 mb-2">
         <Button

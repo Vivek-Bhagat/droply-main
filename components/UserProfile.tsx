@@ -17,7 +17,7 @@ export default function UserProfile() {
 
   if (!isLoaded) {
     return (
-      <div className="flex flex-col justify-center items-center p-12">
+      <div className="flex flex-col justify-center items-center p-12 poppins-bold">
         <Spinner size="lg" color="primary" />
         <p className="mt-4 text-default-600">Loading your profile...</p>
       </div>
@@ -26,7 +26,7 @@ export default function UserProfile() {
 
   if (!isSignedIn) {
     return (
-      <Card className="max-w-md mx-auto border border-default-200 bg-default-50 shadow-sm hover:shadow-md transition-shadow">
+      <Card className="max-w-md mx-auto border border-default-200 bg-default-50 shadow-sm hover:shadow-md transition-shadow poppins-bold">
         <CardHeader className="flex gap-3">
           <User className="h-6 w-6 text-primary" />
           <h2 className="text-xl font-semibold">User Profile</h2>
@@ -72,7 +72,7 @@ export default function UserProfile() {
   };
 
   return (
-    <Card className="max-w-md mx-auto border border-default-200 bg-default-50 shadow-sm hover:shadow-md transition-shadow">
+    <Card className="max-w-md mx-auto border border-default-200 bg-default-50 shadow-sm hover:shadow-md transition-shadow poppins-bold">
       <CardHeader className="flex gap-3">
         <User className="h-6 w-6 text-primary" />
         <h2 className="text-xl font-semibold">User Profile</h2>

@@ -9,7 +9,7 @@ interface FileEmptyStateProps {
 
 export default function FileEmptyState({ activeTab }: FileEmptyStateProps) {
   return (
-    <Card className="border border-default-200 bg-default-50">
+    <Card className="border border-default-200 bg-default-50 poppins-bold">
       <CardBody className="text-center py-16">
         <File className="h-16 w-16 mx-auto text-primary/50 mb-6" />
         <h3 className="text-xl font-medium mb-2">

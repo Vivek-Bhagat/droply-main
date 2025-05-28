@@ -20,7 +20,7 @@ export default function FileActions({
   onDownload,
 }: FileActionsProps) {
   return (
-    <div className="flex flex-wrap gap-2 justify-end">
+    <div className="flex flex-wrap gap-2 justify-end poppins-bold">
       {/* Download button */}
       {!file.isTrash && !file.isFolder && (
         <Button

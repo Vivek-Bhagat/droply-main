@@ -44,17 +44,17 @@ export default function DashboardContent({
 
   return (
     <>
-      <div className="mb-8 font-mono">
+      <div className="mb-8 poppins-medium">
         <h2 className="text-4xl font-bold text-default-900">
           Hi,{"  "}
-          <span className="text-primary font-mono">
+          <span className="text-primary poppins-extrabold font-extrabold">
             {userName?.length > 10
               ? `${userName?.substring(0, 10)}...`
               : userName?.split(" ")[0] || "there"}
           </span>
           !
         </h2>
-        <p className="text-default-600 mt-2 text-lg font-sans">
+        <p className=" mt-2 text-lg poppins-medium">
           Your images are waiting for you.
         </p>
       </div>
@@ -76,11 +76,11 @@ export default function DashboardContent({
           title={
             <div className="flex items-center gap-3">
               <FileText className="h-5 w-5" />
-              <span className="font-medium font-mono">My Files</span>
+              <span className="poppins-bold">My Files</span>
             </div>
           }
         >
-          <div className="mt-8 grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div className="mt-8 grid grid-cols-1 lg:grid-cols-3 gap-6 poppins-bold">
             <div className="lg:col-span-1">
               <Card className="border border-default-200 bg-default-50 shadow-sm hover:shadow-md transition-shadow">
                 <CardHeader className="flex gap-3">
@@ -120,7 +120,7 @@ export default function DashboardContent({
           title={
             <div className="flex items-center gap-3">
               <User className="h-5 w-5" />
-              <span className="font-medium">Profile</span>
+              <span className="poppins-bold">Profile</span>
             </div>
           }
         >

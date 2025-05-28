@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Poppins } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Providers } from "./providers";
 import "../styles/globals.css";
@@ -8,6 +8,13 @@ const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
 });
+
+const poppins = Poppins({
+  subsets:['latin'],
+  weight: '100',
+  style: 'normal',
+  variable:"--font-poppin"
+})
 
 export const metadata: Metadata = {
   title: "Droply",
@@ -23,7 +30,7 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en" className="dark">
         <body
-          className={`${inter.variable} antialiased bg-background text-foreground`}
+          className={`${inter.variable}  antialiased bg-background text-foreground`}
         >
           <Providers>{children}</Providers>
         </body>

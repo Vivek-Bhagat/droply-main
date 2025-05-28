@@ -131,7 +131,7 @@ export default function Navbar({ user }: NavbarProps) {
     <header
       className={`bg-default-50 border-b border-default-200 sticky top-0 z-50 transition-shadow ${isScrolled ? "shadow-sm" : ""}`}
     >
-      <div className="container mx-auto py-3 md:py-4 px-4 md:px-6">
+      <div className="container mx-auto py-3 md:py-4 px-4 md:px-6 poppins-bold">
         <div className="flex justify-between items-center">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 z-10">

@@ -38,7 +38,7 @@ export default function FileTabs({
         title={
           <div className="flex items-center gap-2 sm:gap-3">
             <File className="h-4 w-4 sm:h-5 sm:w-5" />
-            <span className="font-medium">All Files</span>
+            <span className="poppins-bold">All Files</span>
             <Badge
               variant="flat"
               color="default"
@@ -55,7 +55,7 @@ export default function FileTabs({
         title={
           <div className="flex items-center gap-2 sm:gap-3">
             <Star className="h-4 w-4 sm:h-5 sm:w-5" />
-            <span className="font-medium">Starred</span>
+            <span className="font-bold">Starred</span>
             <Badge
               variant="flat"
               color="warning"
@@ -72,7 +72,7 @@ export default function FileTabs({
         title={
           <div className="flex items-center gap-2 sm:gap-3">
             <Trash className="h-4 w-4 sm:h-5 sm:w-5" />
-            <span className="font-medium">Trash</span>
+            <span className="font-bold">Trash</span>
             <Badge
               variant="solid"
               color="danger"

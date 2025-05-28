@@ -1,5 +1,5 @@
 "use client";
-
+import "../styles/globals.css"
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -65,9 +65,9 @@ export default function SignInForm() {
 
   return (
     <Card className="w-full max-w-md border border-default-200 bg-default-50 shadow-xl">
-      <CardHeader className="flex flex-col gap-1 items-center pb-2">
-        <h1 className="text-2xl font-bold text-default-900">Welcome Back</h1>
-        <p className="text-default-500 text-center">
+      <CardHeader className="flex flex-col gap-1 items-center pb-2 poppins-regular">
+        <h1 className="text-2xl font-bold text-default-900 ">Welcome Back</h1>
+        <p className="text-default-800 text-center">
           Sign in to access your secure cloud storage
         </p>
       </CardHeader>
@@ -83,10 +83,10 @@ export default function SignInForm() {
         )}
 
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-          <div className="space-y-2">
+          <div className="space-y-2 poppins-medium">
             <label
               htmlFor="identifier"
-              className="text-sm font-medium text-default-900 font-mono"
+              className="text-sm poppins-bold"
             >
               Email
             </label>
@@ -94,19 +94,19 @@ export default function SignInForm() {
               id="identifier"
               type="email"
               placeholder="your.email@example.com"
-              startContent={<Mail className="h-4 w-4 text-default-500 font-mono" />}
+              startContent={<Mail className="h-4 w-4 " />}
               isInvalid={!!errors.identifier}
               errorMessage={errors.identifier?.message}
               {...register("identifier")}
-              className="w-full"
+              className="w-full poppins-bold"
             />
           </div>
 
           <div className="space-y-2">
-            <div className="flex justify-between items-center font-mono">
+            <div className="flex justify-between items-center poppins-bold">
               <label
                 htmlFor="password"
-                className="text-sm font-medium text-default-900 font-mono"
+                className="text-sm poppins-bold"
               >
                 Password
               </label>
@@ -115,7 +115,7 @@ export default function SignInForm() {
               id="password"
               type={showPassword ? "text" : "password"}
               placeholder="••••••••"
-              startContent={<Lock className="h-4 w-4 text-default-500" />}
+              startContent={<Lock className="h-4 w-4 text-default-800" />}
               endContent={
                 <Button
                   isIconOnly
@@ -125,23 +125,23 @@ export default function SignInForm() {
                   type="button"
                 >
                   {showPassword ? (
-                    <EyeOff className="h-4 w-4 text-default-500" />
+                    <EyeOff className="h-4 w-4 text-default-800" />
                   ) : (
-                    <Eye className="h-4 w-4 text-default-500" />
+                    <Eye className="h-4 w-4 text-default-900" />
                   )}
                 </Button>
               }
               isInvalid={!!errors.password}
               errorMessage={errors.password?.message}
               {...register("password")}
-              className="w-full"
+              className="w-full poppins-medium"
             />
           </div>
 
           <Button
             type="submit"
             color="primary"
-            className="w-full"
+            className="w-full poppins-medium"
             isLoading={isSubmitting}
           >
             {isSubmitting ? "Signing in..." : "Sign In"}
@@ -152,11 +152,11 @@ export default function SignInForm() {
       <Divider />
 
       <CardFooter className="flex justify-center py-4">
-        <p className="text-sm text-default-600">
+        <p className="text-sm poppins-bold">
           Don't have an account?{" "}
           <Link
             href="/sign-up"
-            className="text-primary hover:underline font-medium"
+            className="text-primary hover:underline poppins-bold"
           >
             Sign up
           </Link>

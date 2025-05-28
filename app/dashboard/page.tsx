@@ -25,7 +25,7 @@ export default async function Dashboard() {
     : null;
 
   return (
-    <div className="min-h-screen flex flex-col bg-default-50">
+    <div className="min-h-screen flex flex-col bg-default-50 poppins-bold">
       <Navbar user={serializedUser} />
 
       <main className="flex-1 container mx-auto py-8 px-6">
@@ -40,7 +40,7 @@ export default async function Dashboard() {
         />
       </main>
 
-      <footer className="bg-default-50 border-t border-default-200 py-6">
+      <footer className="bg-default-50 border-t border-default-200 py-6 poppins-bold">
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center gap-2 mb-4 md:mb-0">

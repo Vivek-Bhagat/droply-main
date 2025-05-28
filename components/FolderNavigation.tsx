@@ -15,7 +15,7 @@ export default function FolderNavigation({
   navigateToPathFolder,
 }: FolderNavigationProps) {
   return (
-    <div className="flex flex-wrap items-center gap-2 text-sm overflow-x-auto pb-2">
+    <div className="flex flex-wrap items-center gap-2 text-sm overflow-x-auto pb-2 poppins-bold">
       <Button
         variant="flat"
         size="sm"

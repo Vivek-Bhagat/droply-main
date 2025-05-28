@@ -19,8 +19,8 @@ export default function FileActionButtons({
   onEmptyTrash,
 }: FileActionButtonsProps) {
   return (
-    <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 sm:gap-0">
-      <h2 className="text-xl sm:text-2xl font-semibold truncate max-w-full">
+    <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 sm:gap-0 poppins-bold">
+      <h2 className="text-xl sm:text-2xl  truncate max-w-full">
         {activeTab === "all" &&
           (folderPath.length > 0
             ? folderPath[folderPath.length - 1].name

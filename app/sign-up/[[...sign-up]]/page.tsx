@@ -2,10 +2,11 @@ import SignUpForm from "@/components/SignUpForm";
 import { CloudUpload } from "lucide-react";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
+import "../../../styles/globals.css"
 
 export default function SignUpPage() {
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
+    <div className="min-h-screen flex flex-col bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 poppins-regular">
       {/* Use the unified Navbar component */}
       <Navbar />
 
@@ -16,7 +17,7 @@ export default function SignUpPage() {
       {/* Dark mode footer */}
       <footer className="bg-gray-900 text-white py-4">
         <div className="container mx-auto px-6 text-center">
-          <p className="text-sm text-gray-400">
+          <p className="text-sm text-gray-400 poppins-bold">
             &copy; {new Date().getFullYear()} Droply. All rights reserved.
           </p>
         </div>

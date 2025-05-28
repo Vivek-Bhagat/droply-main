@@ -384,7 +384,7 @@ export default function FileList({
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 poppins-bold">
       {/* Tabs for filtering files */}
       <FileTabs
         activeTab={activeTab}
