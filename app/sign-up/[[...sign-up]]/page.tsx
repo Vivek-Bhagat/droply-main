@@ -10,8 +10,8 @@ export default function SignUpPage() {
       {/* Use the unified Navbar component */}
       <Navbar />
 
-      <main className="flex-1 flex justify-center items-center p-6 poppins-regular">
-        <SignUp />
+      <main className="flex-1 flex justify-center items-center p-6 poppins-bold text-black">
+        <SignUp/>
       </main>
 
       {/* Dark mode footer */}
