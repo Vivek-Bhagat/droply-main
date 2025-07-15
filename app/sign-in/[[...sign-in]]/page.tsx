@@ -9,7 +9,7 @@ export default function SignInPage() {
       {/* Use the unified Navbar component */}
       <Navbar />
 
-      <main className="flex-1 flex justify-center items-center p-6">
+      <main className="flex-1 flex justify-center items-center p-6 poppins-regular">
         <SignIn />
       </main>
 

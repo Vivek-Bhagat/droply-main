@@ -129,12 +129,13 @@ export default function Navbar({ user }: NavbarProps) {
 
   return (
     <header
-      className={`bg-default-50 border-b border-default-200 sticky top-0 z-50 transition-shadow ${isScrolled ? "shadow-sm" : ""}`}
-    >
+      className={`bg-default-50 border-b border-default-200 sticky top-0 z-50 transition-shadow ${isScrolled ? "shadow-sm" : ""}`}>
       <div className="container mx-auto py-3 md:py-4 px-4 md:px-6 poppins-bold">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 z-10">
+          <Link
+            href="/"
+            className="flex items-center gap-2 z-10">
             <CloudUpload className="h-6 w-6 text-primary" />
             <h1 className="text-xl font-bold">Droply</h1>
           </Link>
@@ -144,12 +145,18 @@ export default function Navbar({ user }: NavbarProps) {
             {/* Show these buttons when user is signed out */}
             <SignedOut>
               <Link href="/sign-in">
-                <Button variant="flat" color="primary">
+                <Button
+                  variant="flat"
+                  color="primary"
+                  className="poppins-bold">
                   Sign In
                 </Button>
               </Link>
               <Link href="/sign-up">
-                <Button variant="solid" color="primary">
+                <Button
+                  variant="solid"
+                  color="primary"
+                  className="poppins-bold">
                   Sign Up
                 </Button>
               </Link>
@@ -157,21 +164,23 @@ export default function Navbar({ user }: NavbarProps) {
 
             {/* Show these when user is signed in */}
             <SignedIn>
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-4 poppins-regular">
                 {!isOnDashboard && (
                   <Link href="/dashboard">
-                    <Button variant="flat" color="primary">
+                    <Button
+                      variant="flat"
+                      color="primary"
+                      className="poppins-bold">
                       Dashboard
                     </Button>
                   </Link>
                 )}
-                <Dropdown>
+                <Dropdown className="poppins-medium">
                   <DropdownTrigger>
                     <Button
                       variant="flat"
                       className="p-0 bg-transparent min-w-0"
-                      endContent={<ChevronDown className="h-4 w-4 ml-2" />}
-                    >
+                      endContent={<ChevronDown className="h-4 w-4 ml-2" />}>
                       <div className="flex items-center gap-2">
                         <Avatar
                           name={userDetails.initials}
@@ -180,34 +189,37 @@ export default function Navbar({ user }: NavbarProps) {
                           className="h-8 w-8 flex-shrink-0"
                           fallback={<User className="h-4 w-4" />}
                         />
-                        <span className="text-default-600 hidden sm:inline">
+                        <span className="text-default-600 hidden sm:inline poppins-bold">
                           {userDetails.displayName}
                         </span>
                       </div>
                     </Button>
                   </DropdownTrigger>
-                  <DropdownMenu aria-label="User actions">
+                  <DropdownMenu
+                    aria-label="User actions"
+                    className="font-poppins">
                     <DropdownItem
                       key="profile"
-                      description={userDetails.email || "View your profile"}
-                      onClick={() => router.push("/dashboard?tab=profile")}
-                    >
+                      description={
+                        <span className="text-green-600 font-bold">
+                          {userDetails.email || "View your profile"}
+                        </span>
+                      }
+                      onClick={() => router.push("/dashboard?tab=profile")}>
                       Profile
                     </DropdownItem>
                     <DropdownItem
                       key="files"
-                      description="Manage your files"
-                      onClick={() => router.push("/dashboard")}
-                    >
+                      description={<span className="font-bold text-blue-500">Manage your files</span>}
+                      onClick={() => router.push("/dashboard")}>
                       My Files
                     </DropdownItem>
                     <DropdownItem
                       key="logout"
-                      description="Sign out of your account"
-                      className="text-danger"
+                      description={<span className="text-red-600 font-bold hover:text-white"> Sign out of your account </span>}
+                      className="font-poppins font-medium"
                       color="danger"
-                      onClick={handleSignOut}
-                    >
+                      onClick={handleSignOut}>
                       Sign Out
                     </DropdownItem>
                   </DropdownMenu>
@@ -231,8 +243,7 @@ export default function Navbar({ user }: NavbarProps) {
               className="z-50 p-2"
               onClick={toggleMobileMenu}
               aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
-              data-menu-button="true"
-            >
+              data-menu-button="true">
               {isMobileMenuOpen ? (
                 <X className="h-6 w-6 text-default-700" />
               ) : (
@@ -255,25 +266,28 @@ export default function Navbar({ user }: NavbarProps) {
             ref={mobileMenuRef}
             className={`fixed top-0 right-0 bottom-0 w-4/5 max-w-sm bg-default-50 z-40 flex flex-col pt-20 px-6 shadow-xl transition-transform duration-300 ease-in-out ${
               isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
-            } md:hidden`}
-          >
+            } md:hidden`}>
             <SignedOut>
               <div className="flex flex-col gap-4 items-center">
                 <Link
                   href="/sign-in"
                   className="w-full"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  <Button variant="flat" color="primary" className="w-full">
+                  onClick={() => setIsMobileMenuOpen(false)}>
+                  <Button
+                    variant="flat"
+                    color="primary"
+                    className="w-full">
                     Sign In
                   </Button>
                 </Link>
                 <Link
                   href="/sign-up"
                   className="w-full"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  <Button variant="solid" color="primary" className="w-full">
+                  onClick={() => setIsMobileMenuOpen(false)}>
+                  <Button
+                    variant="solid"
+                    color="primary"
+                    className="w-full poppins-bold">
                     Sign Up
                   </Button>
                 </Link>
@@ -304,26 +318,23 @@ export default function Navbar({ user }: NavbarProps) {
                   {!isOnDashboard && (
                     <Link
                       href="/dashboard"
-                      className="py-2 px-3 hover:bg-default-100 rounded-md transition-colors"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
+                      className="py-2 px-3 hover:bg-default-100 rounded-md transition-colors poppins-bold"
+                      onClick={() => setIsMobileMenuOpen(false)}>
                       Dashboard
                     </Link>
                   )}
                   <Link
                     href="/dashboard?tab=profile"
                     className="py-2 px-3 hover:bg-default-100 rounded-md transition-colors"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
+                    onClick={() => setIsMobileMenuOpen(false)}>
                     Profile
                   </Link>
                   <button
-                    className="py-2 px-3 text-left text-danger hover:bg-danger-50 rounded-md transition-colors mt-4"
+                    className="py-2 px-3 text-left text-danger hover:bg-danger-50 rounded-md transition-colors mt-4 poppins-bold"
                     onClick={() => {
-                      setIsMobileMenuOpen(false);
-                      handleSignOut();
-                    }}
-                  >
+                      setIsMobileMenuOpen(false)
+                      handleSignOut()
+                    }}>
                     Sign Out
                   </button>
                 </div>
@@ -333,5 +344,5 @@ export default function Navbar({ user }: NavbarProps) {
         </div>
       </div>
     </header>
-  );
+  )
 }

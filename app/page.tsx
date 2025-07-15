@@ -66,7 +66,8 @@ export default function Home() {
                       <Button
                         size="lg"
                         variant="solid"
-                        color="primary">
+                        color="primary"
+                      className="poppins-bold">
                         Get Started
                       </Button>
                     </Link>
@@ -76,7 +77,8 @@ export default function Home() {
                       <Button
                         size="lg"
                         variant="flat"
-                        color="primary">
+                        color="primary"
+                      className="poppins-bold">
                         Sign In
                       </Button>
                     </Link>
@@ -89,7 +91,8 @@ export default function Home() {
                         size="lg"
                         variant="solid"
                         color="primary"
-                        endContent={<ArrowRight className="h-4 w-4" />}>
+                        endContent={<ArrowRight className="h-4 w-4" />}
+                      className="poppins-bold">
                         Go to Dashboard
                       </Button>
                     </Link>

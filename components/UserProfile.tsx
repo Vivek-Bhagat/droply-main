@@ -130,7 +130,7 @@ export default function UserProfile() {
             </Badge>
           </div>
 
-          <div className="flex justify-between items-center">
+          <div className="flex justify-between items-center font-semibold">
             <div className="flex items-center gap-2">
               <Mail className="h-5 w-5 text-primary/70" />
               <span className="font-medium">Email Verification</span>
@@ -156,14 +156,14 @@ export default function UserProfile() {
         </div>
       </CardBody>
       <Divider />
-      <CardFooter className="flex justify-between">
+      <CardFooter className="flex justify-between font-poppin font-semibold">
         <Button
           variant="flat"
           color="danger"
           startContent={<LogOut className="h-4 w-4" />}
           onClick={handleSignOut}
         >
-          Sign Out
+          <span className="font-bold">Sign Out</span>
         </Button>
       </CardFooter>
     </Card>

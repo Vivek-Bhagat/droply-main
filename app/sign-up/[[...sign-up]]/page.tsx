@@ -1,7 +1,7 @@
-import SignUpForm from "@/components/SignUpForm";
-import { CloudUpload } from "lucide-react";
-import Link from "next/link";
-import Navbar from "@/components/Navbar";
+import SignUpForm from "@/components/SignUpForm"
+import { CloudUpload } from "lucide-react"
+import Link from "next/link"
+import Navbar from "@/components/Navbar"
 import "../../../styles/globals.css"
 import { SignUp, useUser } from "@clerk/nextjs"
 export default function SignUpPage() {
@@ -10,7 +10,7 @@ export default function SignUpPage() {
       {/* Use the unified Navbar component */}
       <Navbar />
 
-      <main className="flex-1 flex justify-center items-center p-6">
+      <main className="flex-1 flex justify-center items-center p-6 poppins-regular">
         <SignUp />
       </main>
 
@@ -23,5 +23,5 @@ export default function SignUpPage() {
         </div>
       </footer>
     </div>
-  );
+  )
 }
