@@ -190,7 +190,7 @@ export default function Home() {
                     variant="solid"
                     color="primary"
                     endContent={<ArrowRight className="h-4 w-4" />}>
-                    Let's Go
+                    Let's Go...
                   </Button>
                 </Link>
               </div>
