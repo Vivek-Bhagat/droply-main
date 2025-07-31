@@ -1,6 +1,6 @@
 "use client";
 
-import { useClerk, SignedIn, SignedOut } from "@clerk/nextjs";
+import { useClerk, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import { useRouter, usePathname } from "next/navigation";
 import Link from "next/link";
 import { CloudUpload, ChevronDown, User, Menu, X } from "lucide-react";
@@ -175,55 +175,20 @@ export default function Navbar({ user }: NavbarProps) {
                     </Button>
                   </Link>
                 )}
-                <Dropdown className="poppins-medium">
-                  <DropdownTrigger>
-                    <Button
-                      variant="flat"
-                      className="p-0 bg-transparent min-w-0"
-                      endContent={<ChevronDown className="h-4 w-4 ml-2" />}>
-                      <div className="flex items-center gap-2">
-                        <Avatar
-                          name={userDetails.initials}
-                          size="sm"
-                          src={user?.imageUrl || undefined}
-                          className="h-8 w-8 flex-shrink-0"
-                          fallback={<User className="h-4 w-4" />}
-                        />
-                        <span className="text-default-600 hidden sm:inline poppins-bold">
-                          {userDetails.displayName}
-                        </span>
-                      </div>
-                    </Button>
-                  </DropdownTrigger>
-                  <DropdownMenu
-                    aria-label="User actions"
-                    className="font-poppins">
-                    <DropdownItem
-                      key="profile"
-                      description={
-                        <span className="text-green-600 font-bold">
-                          {userDetails.email || "View your profile"}
-                        </span>
-                      }
-                      onClick={() => router.push("/dashboard?tab=profile")}>
-                      Profile
-                    </DropdownItem>
-                    <DropdownItem
-                      key="files"
-                      description={<span className="font-bold text-blue-500">Manage your files</span>}
-                      onClick={() => router.push("/dashboard")}>
-                      My Files
-                    </DropdownItem>
-                    <DropdownItem
-                      key="logout"
-                      description={<span className="text-red-600 font-bold hover:text-white"> Sign out of your account </span>}
-                      className="font-poppins font-medium"
-                      color="danger"
-                      onClick={handleSignOut}>
-                      Sign Out
-                    </DropdownItem>
-                  </DropdownMenu>
-                </Dropdown>
+                <Button
+                  variant="flat"
+                  className="p-0 bg-transparent min-w-0 border-2 hover:bg-transparent border-default-200 px-3"
+                  >
+                  <div className="flex items-center gap-2">
+                    <span className="text-default-600 hidden sm:inline poppins-bold">
+                      {userDetails.displayName.trim()}
+                    </span>
+                    <UserButton />
+                  </div>
+                </Button>
+                {/* <Dropdown className="poppins-medium">
+                  <DropdownTrigger></DropdownTrigger>
+                </Dropdown> */}
               </div>
             </SignedIn>
           </div>
@@ -332,8 +297,8 @@ export default function Navbar({ user }: NavbarProps) {
                   <button
                     className="py-2 px-3 text-left text-danger hover:bg-danger-50 rounded-md transition-colors mt-4 poppins-bold"
                     onClick={() => {
-                      setIsMobileMenuOpen(false)
-                      handleSignOut()
+                      setIsMobileMenuOpen(false);
+                      handleSignOut();
                     }}>
                     Sign Out
                   </button>
@@ -344,5 +309,5 @@ export default function Navbar({ user }: NavbarProps) {
         </div>
       </div>
     </header>
-  )
+  );
 }

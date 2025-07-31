@@ -1,6 +1,6 @@
 "use client";
 
-import { useUser, useClerk } from "@clerk/nextjs";
+import { useUser, useClerk, UserButton } from "@clerk/nextjs";
 import { Button } from "@heroui/button";
 import { Card, CardBody, CardHeader, CardFooter } from "@heroui/card";
 import { Spinner } from "@heroui/spinner";
@@ -166,6 +166,7 @@ export default function UserProfile() {
           <span className="font-bold">Sign Out</span>
         </Button>
       </CardFooter>
+      
     </Card>
   );
 }
